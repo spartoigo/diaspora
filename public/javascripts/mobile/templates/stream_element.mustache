@@ -1,0 +1,38 @@
+<!-- stream element partial -->
+
+<div class='photo_area'>
+  {{#photos}}
+    <div class='photo_attachments'>
+      {{#photo}}
+        <img src='{{thumb_medium}}' class="stream-photo big-stream-photo"/>
+      {{/photo}}
+    </div>
+  {{/photos}}
+</div>
+
+<div class='content'>
+  <div class='from'>
+    {{#author}}
+      <a href='/people/{{id}}'>
+        <img src='{{avatar}}' class='avatar'/>
+      </a>
+      <a href='/people/{{id}}'>
+        {{{name}}}
+      </a> 
+    {{/author}}
+    <div class='info'>
+      <span class='time'>{{createdAt}}</span> 
+      <span class='via'></span>
+      <span class='post-scope'></span>
+    </div>
+  </div>
+  {{{text}}}
+</div>
+
+<div class='bottom_bar'>
+  <div class='floater'>
+    <a href='/post/{{id}}/comments' class='image_link comment_action inactive'></a>
+    <a href='/post/{{id}}/likes' class='image_link like_action inactive'></a>
+  </div>
+  {{reactionCount}} reactions
+</div>

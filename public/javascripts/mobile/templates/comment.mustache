@@ -1,0 +1,16 @@
+<div class="stream-element comment">
+  {{#author}}
+    <a href='/#people/{{id}}'>
+      <img src='{{avatar}}' class='avatar'/>
+    </a>
+  {{/author}}
+  <div class='content'>
+    <div class='stream-date'>
+      {{date}}
+    </div>
+    {{#author}}
+      <div class="author-name">{{name}}</div>
+    {{/author}}
+    {{{text}}}
+  </div>
+</div>

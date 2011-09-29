@@ -244,7 +244,7 @@ body {
   max-width: 700px;
 }
 
-.stream_element,
+.stream-element,
 .comments {
   overflow: auto;
   position: relative;
@@ -294,7 +294,7 @@ body {
   padding: 10px;
 }
 
-.stream_element .comments {
+.stream-element .comments {
   padding: 0;
   margin: 0;
   top: 8px;
@@ -357,7 +357,7 @@ body {
   }
 }
 
-.stream_element {
+.stream-element {
   @include border-radius(3px);
   @include box-shadow(0, 1px, 5px, rgba(0, 0, 0, 1));
   background: {
@@ -480,7 +480,7 @@ header {
   .right {
     float: right; } }
 
-.stream_element {
+.stream-element {
   /* force hardware acceleration on webkit browsers */
   -webkit-transform: translateZ(0);
 }
@@ -582,7 +582,7 @@ footer {
 .floater {
   float: right; }
 
-.stream_element .photo_attachments {
+.stream-element .photo_attachments {
   @include border-radius(3px);
 
   background: {

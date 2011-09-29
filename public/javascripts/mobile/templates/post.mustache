@@ -1,0 +1,40 @@
+<div id="post-show">
+  <div id="post-author-info">
+    {{#author}}
+      <a href='/#people/{{id}}'>
+        <img src='{{avatar}}' class='avatar'/>
+      </a>
+      <div class="content">
+        <span class="author-name larger">{{name}}</div>
+      </div>
+    {{/author}}
+
+
+    <div id="post-content">
+      {{{text}}}
+      {{#photos}}
+        <div class="post-photos">
+          {{#photo}}
+            <img src='{{thumb_large}}' class="post-photo'/>
+          {{/photo}}
+      {{/photos}}
+    </div>
+
+    <div class='stream-date'>
+      {{date}}
+    </div>
+
+  </div>
+    
+  <div id="comments">
+    {{#comments}}
+      {{> comment}}
+    {{/comments}}
+  </div>
+</div>
+
+<form id="new_comment_form" method="post">
+  <textarea></textarea>
+  <br/>
+  <input type="submit" class="button" value="Comment"/>
+</form>

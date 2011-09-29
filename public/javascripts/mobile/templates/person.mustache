@@ -1,0 +1,29 @@
+<div id="person-header">
+  <img src='{{avatar_medium}}' class='avatar large'/>
+  <h2>
+    {{name}}
+  </h2>
+  <h4>
+    {{handle}}
+  </h4>
+</div>
+
+<div id="subnav">
+  <div id="new-mention" class="subnav-element">
+    <img src="/images/icons/mention_mobile_grey.png" width=18 height=18/>
+    mention
+  </div>
+  <div id="new-message" class="subnav-element">
+    <img src="/images/icons/mail_mobile_grey.png" width=18 height=18/>
+    message
+  </div>
+</div>
+
+<div id="stream">
+  {{#posts}}
+    <div class="stream-element">
+      {{> stream_element}}
+    </div>
+  {{/posts}}
+</div>
+

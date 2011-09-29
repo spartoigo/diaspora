@@ -49,11 +49,15 @@ javascripts:
     - public/javascripts/vendor/underscore-min.js
     - public/javascripts/vendor/backbone.js
 
+    - public/javascripts/vendor/Mustache.js
+    - public/javascripts/vendor/underscore-min.js
+    - public/javascripts/vendor/backbone.js
+
     - public/javascripts/mobile/app.js
     - public/javascripts/mobile/helpers.js
     - public/javascripts/mobile/models/*
     - public/javascripts/mobile/collections/*
-    - public/javascripts/mobile/controllers/*
+    - public/javascripts/mobile/routers/*
     - public/javascripts/mobile/views/*
 
     - public/javascripts/vendor/mbp-helper.js
