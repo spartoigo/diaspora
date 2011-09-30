@@ -1,16 +1,22 @@
-<div class="stream-element comment">
-  {{#author}}
-    <a href='/#people/{{id}}'>
-      <img src='{{avatar}}' class='avatar'/>
-    </a>
-  {{/author}}
-  <div class='content'>
-    <div class='stream-date'>
-      {{date}}
-    </div>
+<!-- comment partial -->
+
+<div class='content'>
+  <div class='from'>
     {{#author}}
-      <div class="author-name">{{name}}</div>
+      <a href='/#people/{{id}}'>
+        <img src='{{avatar}}' class='avatar'/>
+      </a>
+      <a href='/#people/{{id}}'>
+        {{{name}}}
+      </a>
     {{/author}}
+    <div class='info'>
+      <span class="time timago">
+        {{date}}
+      </span>
+    </div>
+  </div>
+  <div>
     {{{text}}}
   </div>
 </div>

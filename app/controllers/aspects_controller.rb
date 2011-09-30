@@ -10,7 +10,7 @@ class AspectsController < ApplicationController
   before_filter :ensure_page, :only => :index
 
   respond_to :html, :js
-  respond_to :json, :only => [:show, :create]
+  respond_to :json, :only => [:show, :create, :index]
 
   helper_method :selected_people
 
@@ -23,6 +23,8 @@ class AspectsController < ApplicationController
     if params[:only_posts]
       render :partial => 'shared/stream', :locals => {:posts => @stream.posts}
     end
+
+    respond_with(@stream.posts, :include => :author)
   end
 
   def create

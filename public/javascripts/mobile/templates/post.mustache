@@ -1,40 +1,48 @@
-<div id="post-show">
-  <div id="post-author-info">
+<!-- stream element partial -->
+
+<div class='photo_area'>
+  {{#photos}}
+    <div class='photo_attachments'>
+      {{#photo}}
+        <img src='{{thumb_medium}}' class="stream-photo big-stream-photo"/>
+      {{/photo}}
+    </div>
+  {{/photos}}
+</div>
+
+{{#status_message}}
+<a href='#/posts/{{id}}'> go here </a>
+{{/status_message}}
+
+<div class='content'>
+  <div class='from'>
     {{#author}}
-      <a href='/#people/{{id}}'>
+      <a href='/people/{{id}}'>
         <img src='{{avatar}}' class='avatar'/>
       </a>
-      <div class="content">
-        <span class="author-name larger">{{name}}</div>
-      </div>
+      <a href='/people/{{id}}'>
+        {{{name}}}
+      </a> 
     {{/author}}
-
-
-    <div id="post-content">
-      {{{text}}}
-      {{#photos}}
-        <div class="post-photos">
-          {{#photo}}
-            <img src='{{thumb_large}}' class="post-photo'/>
-          {{/photo}}
-      {{/photos}}
+    <div class='info'>
+      <span class='time'>{{createdAt}}</span> 
+      <span class='via'></span>
+      <span class='post-scope'></span>
     </div>
-
-    <div class='stream-date'>
-      {{date}}
-    </div>
-
   </div>
-    
+  {{{text}}}
+</div>
+
+<div class='bottom_bar'>
+  <div class='floater'>
+    <a href='/post/{{id}}/comments' class='image_link comment_action inactive'></a>
+    <a href='/post/{{id}}/likes' class='image_link like_action inactive'></a>
+  </div>
+  {{commentCount}} reactions
+
   <div id="comments">
     {{#comments}}
       {{> comment}}
     {{/comments}}
   </div>
 </div>
-
-<form id="new_comment_form" method="post">
-  <textarea></textarea>
-  <br/>
-  <input type="submit" class="button" value="Comment"/>
-</form>

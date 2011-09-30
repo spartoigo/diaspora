@@ -6,7 +6,6 @@ App.Routers.Posts = Backbone.Router.extend({
 
   show: function(id){
     var post = new App.Models.Post({id : id});
-
     post.fetch({
       success: function(){
         new App.Views.Post({

@@ -1,5 +1,5 @@
 App.Views.Post = Backbone.View.extend({
-  className: "post-view",
+  className: "stream-element",
 
   initialize: function(){
     this.render();
@@ -7,18 +7,35 @@ App.Views.Post = Backbone.View.extend({
 
   events: {
     "submit #new_comment_form" : "submitComment",
+    "click .image_link.like_action.inactive" : "like"
   },
 
   render: function() {
-    var $content = $("#content").html("");
-    TemplateHelper.get("post", $.proxy(function(postTemplateHtml) {
-      TemplateHelper.get("comment", $.proxy(function(commentTemplateHtml) {
+    var stream = $(".stream").first().html('');
 
-        $(this.el).html(
-          $.mustache(postTemplateHtml, this.model.toJSON(), {comment: commentTemplateHtml})
-        ).appendTo($content);
-      }, this));
+    TemplateHelper.get("post", $.proxy(function(templateHtml) {
+      $(this.el).html(
+        $.mustache(templateHtml, this.model.toJSON())
+      ).appendTo(stream);
     }, this));
+    return this;
+
+    // var $content = $("#content").html("");
+    // TemplateHelper.get("post", $.proxy(function(postTemplateHtml) {
+    //   TemplateHelper.get("comment", $.proxy(function(commentTemplateHtml) {
+
+    //     $(this.el).html(
+    //       $.mustache(postTemplateHtml, this.model.toJSON(), {comment: commentTemplateHtml})
+    //     ).appendTo($content);
+    //   }, this));
+    // }, this));
+    // return this;
+  },
+
+  like: function(evt) {
+    evt.preventDefault();
+    var like = new App.Models.Like({ "post_id" : this.model.id });
+    alert('liked!');
     return this;
   },
 

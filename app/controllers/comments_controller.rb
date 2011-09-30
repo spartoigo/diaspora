@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
   respond_to :html, :mobile, :except => :show
   respond_to :js, :only => [:index]
+  respond_to :json, :except => :new
 
   rescue_from ActiveRecord::RecordNotFound do
     render :nothing => true, :status => 404
@@ -58,7 +59,7 @@ class CommentsController < ApplicationController
     @post = current_user.find_visible_post_by_id(params[:post_id])
     if @post
       @comments = @post.comments.includes(:author => :profile).order('created_at ASC')
-      render :layout => false
+      respond_with(@comments, :layout => false)
     else
       raise ActiveRecord::RecordNotFound.new
     end

@@ -3,7 +3,7 @@ var App =  {
     _.each(this.Routers, function(router) {
       new router();
     });
-    Backbone.history.start({pushState:true});
+    Backbone.history.start();
   },
   Collections: {},
   Routers: {},

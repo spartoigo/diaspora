@@ -4,13 +4,14 @@ App.Views.Stream = new (Backbone.View.extend({
   className: "stream",
 
   render: function() {
-    $("#content").html("");
+    var main = $("#main").html("");
+    $("<div class='stream'></div>").appendTo(main);
+
     _.each(App.Collections.Stream.models, function(model) {
-      new App.Views.StreamElement({
+      new App.Views.Post({
         model: model
       }).render();
-    }); 
-
+    });
     return this;
   }
 }));

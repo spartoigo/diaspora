@@ -1,6 +1,11 @@
 App.Models.Post = Backbone.Model.extend({
+
+  initialize: function() {
+    this.comments = new App.Collections.Comments(this.get("comments"));
+  },
+
   url: function(){
-    return '/post/' + this.id + '.json'
+    return '/posts/' + this.id
   },
 
   reactionCount: function(){
