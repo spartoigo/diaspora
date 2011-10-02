@@ -24,7 +24,7 @@ class AspectsController < ApplicationController
       render :partial => 'shared/stream', :locals => {:posts => @stream.posts}
     end
 
-    respond_with(@stream.posts, :include => :author)
+    respond_with(@stream.posts, :include => { :author => {:include => :profile}})
   end
 
   def create

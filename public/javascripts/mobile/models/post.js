@@ -1,7 +1,6 @@
 App.Models.Post = Backbone.Model.extend({
-
   initialize: function() {
-    this.comments = new App.Collections.Comments(this.get("comments"));
+    console.log(this.attributes);
   },
 
   url: function(){
@@ -9,6 +8,6 @@ App.Models.Post = Backbone.Model.extend({
   },
 
   reactionCount: function(){
-    return this.get('commentCount') + this.get('likeCount');
+    return this.get('comments_count') + this.get('likes_count');
   }
 });
